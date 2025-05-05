@@ -35,7 +35,7 @@ function PortableTextRenderer({ value }: Props) {
 
     block: {
       p: ({ children }) => {
-        const text = children?.[0] as string;
+        const text = (Array.isArray(children) ? children[0] : children) as string;
 
         // Si no hay texto → renderiza normal
         if (!text) {

@@ -27,7 +27,7 @@ function RecentPosts({ posts, limit = 3 }: Props) {
             className="bg-white dark:bg-gray-800 rounded-xl shadow hover:shadow-lg transition overflow-hidden flex flex-col"
           >
             <img
-              src={urlFor(post.image)}
+              src={post.image ? urlFor(post.image) : undefined}
               alt={post.title}
               className="w-full h-48 object-cover"
             />

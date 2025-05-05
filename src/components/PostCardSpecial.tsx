@@ -15,7 +15,7 @@ function PostCardSpecial({ post }: Props) {
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
       className="relative w-full min-h-[60vh] bg-cover bg-center flex items-center justify-start rounded-xl overflow-hidden"
-      style={{ backgroundImage: `url(${urlFor(post.image)})` }}
+      style={{ backgroundImage: post.image ? `url(${urlFor(post.image)})` : undefined }}
     >
       {/* Tarjeta de contenido */}
       <div className="bg-white/95 dark:bg-gray-800/90 backdrop-blur-md p-6 md:p-8 rounded-2xl shadow-xl max-w-max m-6">

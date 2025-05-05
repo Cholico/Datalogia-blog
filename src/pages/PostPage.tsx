@@ -16,7 +16,7 @@ function PostPage() {
   useSeoMeta({
     title: post ? `${post.title} | Datalogia` : "Cargando artículo...",
     description: post?.excerpt,
-    image: post?.image?.url,
+    image: (post?.image && 'url' in post.image) ? (post.image as any).url : undefined,
   });
 
   if (loading) return <Loader />

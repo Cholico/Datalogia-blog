@@ -12,7 +12,7 @@ function PostCard({ post }: Props) {
     <article className="bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-xl shadow-md hover:shadow-lg transition-all overflow-hidden flex flex-col">
       {/* Imagen arriba */}
       <img
-        src={urlFor(post.image)}
+        src={post.image ? urlFor(post.image) : undefined}
         alt={post.title}
         className="w-full h-56 object-cover"
       />

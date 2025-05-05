@@ -1,5 +1,3 @@
-// src/lib/sanityClient.ts
-
 import sanityClient from '@sanity/client';
 import imageUrlBuilder from '@sanity/image-url';
 
@@ -12,7 +10,8 @@ export const client = sanityClient({
 
 const builder = imageUrlBuilder(client);
 
-// Sin any, sin errores de importación
-export function urlFor(source: unknown) {
+type SanityImageSource = string | Record<string, any>;
+
+export function urlFor(source: SanityImageSource) {
   return builder.image(source).url();
 }
