@@ -1,0 +1,38 @@
+/* src/styles/prose.css */
+
+.prose h1 {
+    @apply text-4xl font-bold mt-10 mb-6 text-black dark:text-white;
+  }
+  
+  .prose h2 {
+    @apply text-3xl font-semibold mt-8 mb-4 text-black dark:text-white;
+  }
+  
+  .prose h3 {
+    @apply text-2xl font-medium mt-6 mb-3 text-black dark:text-white;
+  }
+  
+  .prose p {
+    @apply leading-relaxed text-lg text-gray-900 dark:text-gray-300 mb-4;
+  }
+  
+  .prose ul {
+    @apply list-disc list-inside mb-4  text-gray-900 dark:text-gray-300;
+  }
+  
+  .prose li {
+    @apply mb-2;
+  }
+  
+  .prose strong {
+    @apply font-bold text-black dark:text-white;
+  }
+  
+  .prose em {
+    @apply italic text-blue-800 dark:text-gray-400;
+  }
+  
+  .prose blockquote {
+    @apply border-l-4 border-blue-500 pl-4 italic text-blue-800 dark:text-gray-400 mb-4;
+  }
+  
