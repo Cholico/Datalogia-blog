@@ -37,22 +37,29 @@ function Navbar() {
           </button>
         </div>
 
-        {/* Menú en desktop */}
-        <ul className="hidden md:flex space-x-6 items-center text-sm font-medium">
-          <li className="hover:underline cursor-pointer"><Link to="/">Inicio</Link></li>
-          <li className="hover:underline cursor-pointer"><Link to="/buscador">Buscar</Link></li>
-          <li className="hover:underline cursor-pointer"><Link to="/glosario">Glosario</Link></li>
-          <li className="hover:underline cursor-pointer"><Link to="/about-me">Acerca</Link></li>
-          <li className="hover:underline cursor-pointer"><Link to="/contact">Contacto</Link></li>
-          <li>
-            <button
-              onClick={() => setIsDark(!isDark)}
-              className="bg-gray-200 dark:bg-gray-700 p-2 rounded-md hover:scale-105 transition-transform"
-            >
-              {isDark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
-          </li>
-        </ul>
+          {/* Menú en desktop */}
+          {menuOpen && (
+          <div className="md:hidden bg-gray-50 dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700">
+            <ul className="flex flex-col space-y-4 p-4 text-sm font-medium">
+              <li><Link to="/" onClick={() => setMenuOpen(false)}>Inicio</Link></li>
+              <li><Link to="/buscador" onClick={() => setMenuOpen(false)}>Buscar</Link></li>
+              <li><Link to="/glosario" onClick={() => setMenuOpen(false)}>Glosario</Link></li>
+              <li><Link to="/about-me" onClick={() => setMenuOpen(false)}>Acerca</Link></li>
+              <li><Link to="/contact" onClick={() => setMenuOpen(false)}>Contacto</Link></li>
+              <li>
+                <button
+                  onClick={() => {
+                    setIsDark(!isDark);
+                    setMenuOpen(false);
+                  }}
+                  className="bg-gray-200 dark:bg-gray-700 p-2 rounded-md hover:scale-105 transition-transform"
+                >
+                  {isDark ? <Sun size={18} /> : <Moon size={18} />}
+                </button>
+              </li>
+            </ul>
+          </div>
+        )}
       </nav>
 
       {/* Menú en móvil */}
